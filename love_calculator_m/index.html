@@ -1,0 +1,71 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>The Love Calculator</title>
+<body bgcolor="pink">
+
+<h3 align="center">The Love Calculator - Máy tính tình yêu</h3>
+<center><<<--- Mobile version --->>></center>
+
+<table width="70%" align="center">
+	<tr>
+		<td>
+			<form action="lovecalculator.php" method="post">
+			<table align="center">
+				<tbody>
+					<tr>
+						<td align="center"><b>Tên của bạn</b></td>
+						<td></td>
+						<td align="center"><b>Tên của người ấy</b></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="love1" size="25" /></td>
+						<td><img src="img/heart.png" height="32" width="32" alt="--LOVE--" /></td>
+						<td><input type="text" name="love2" value="" size="25" /></td>
+					</tr>
+					<tr>
+						<td colspan="3" valign="middle" >
+							Nhập mã chống spam: <img align="top" src="captcha.php" /> <input type="text" name="checkcode" size="6"/>
+							<br />
+							<center><input type="submit" value="Xử lí" /></center>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="hidden" value="1" name="access_check" />
+			</form>
+		</td>
+	</tr>
+</table>
+<div align="center">
+<form name="Tick">
+	Bây giờ là: <input type="button" size="11" name="Clock">
+</form>
+<script>
+function show(){
+var Digital=new Date()
+var hours=Digital.getHours()
+var minutes=Digital.getMinutes()
+var seconds=Digital.getSeconds()
+var dn="AM"
+if (hours>=12)
+dn="PM"
+if (hours>12)
+hours=hours-12
+if (hours==0)
+hours=12
+if (minutes<=9)
+minutes="0"+minutes
+if (seconds<=9)
+seconds="0"+seconds
+document.Tick.Clock.value=hours+":"+minutes+":"
++seconds+" "+dn
+setTimeout("show()",1000)
+}
+show()
+</script>
+<br />
+<span style="color:red; font-weight:bold">Copyright 2012 quocbao747</span>
+</div>
+</body>
+</html>
